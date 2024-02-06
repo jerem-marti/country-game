@@ -1,14 +1,13 @@
 import { shuffle } from "lodash";
-import Country from "./modules/Country";
 import Game from "./modules/Game";
 
 const form = document.querySelector(`form`);
 const score = document.querySelector(`#score`);
 const highscore = document.querySelector(`#highscore`);
 
-const getCountries = async () => {
-    rawCountries = await fetch(`https://restcountries.com/v3.1/all`);
-    jsonCountries = await rawCountries.json();
+async function getCountries() {
+    let rawCountries = await fetch(`https://restcountries.com/v3.1/all`);
+    let jsonCountries = await rawCountries.json();
     return shuffle(jsonCountries);
 }
 
