@@ -12,12 +12,13 @@ const getCountries = async () => {
     return shuffle(jsonCountries);
 }
 
+
 const shuffle = (countries) => shuffle(countries);
 
 getCountries().then(countries => {
     const game = new Game(countries);
     highscore.innerHTML = `<h1>Highscore: ${game.highscore}</h1>`;
-    
+
     form.addEventListener(`submit`, (e) => {
         e.preventDefault();
         if(!game.isEnd()){
