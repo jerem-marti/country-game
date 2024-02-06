@@ -11,7 +11,6 @@ async function getCountries() {
     return shuffle(jsonCountries);
 }
 
-
 const shuffle = (countries) => shuffle(countries);
 
 getCountries().then(countries => {
